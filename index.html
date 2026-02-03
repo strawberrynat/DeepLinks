@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download ReStitch – Quick Tip!</title>
+  <title>Opening ReStitch in App Store...</title>
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       background: #f8f9fa;
       color: #333;
       margin: 0;
@@ -15,69 +15,63 @@
       line-height: 1.6;
     }
     .container {
-      max-width: 500px;
-      margin: 40px auto;
+      max-width: 480px;
+      margin: 60px auto;
       background: white;
       padding: 30px;
-      border-radius: 16px;
+      border-radius: 20px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
     h1 {
-      color: #007aff; /* Apple blue */
-      margin-bottom: 10px;
+      color: #007aff;
     }
-    .steps {
-      text-align: left;
-      margin: 30px 0;
+    p {
       font-size: 18px;
-    }
-    .steps ol {
-      padding-left: 25px;
-    }
-    .steps li {
-      margin-bottom: 15px;
-    }
-    .highlight {
-      background: #e6f2ff;
-      padding: 4px 8px;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-    .link {
-      display: inline-block;
-      margin: 20px 0;
-      padding: 12px 24px;
-      background: #007aff;
-      color: white;
-      text-decoration: none;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: bold;
     }
     .small {
       font-size: 14px;
       color: #666;
-      margin-top: 30px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Almost there! 🚀</h1>
-    <p>You're seeing this because TikTok opens links inside its own browser, which sometimes blocks direct App Store access.</p>
+    <h1>Redirecting to ReStitch... 📱</h1>
+    <p>Just a second—opening your App Store page now!</p>
     
-    <p class="steps">Just do this quick 2-step fix (takes ~3 seconds):</p>
-    <ol class="steps">
-      <li>Tap the <span class="highlight">three dots ⋮</span> in the top-right corner of this screen.</li>
-      <li>Select <span class="highlight">Open in external browser</span> (or "Open in Safari").</li>
-    </ol>
+    <p class="small">If nothing happens in a few seconds:<br>
+    1. Tap the <strong>share icon</strong> (square with arrow up) below.<br>
+    2. Choose <strong>Open in App Store</strong> or try the direct link below.</p>
     
-    <p>That will pop you straight out to the App Store page for <strong>ReStitch</strong>!</p>
-    
-    <a href="https://apps.apple.com/us/app/restitch/id6749212071" class="link">Or tap here if it works now</a>
-    
-    <p class="small">Thanks for downloading! If it still doesn't work, copy the link below and paste it into Safari or Notes:<br>
-    <strong>https://apps.apple.com/us/app/restitch/id6749212071</strong></p>
+    <a href="https://apps.apple.com/us/app/restitch/id6749212071" style="display: none;">Direct App Store Link</a>
   </div>
+
+  <script>
+    (function() {
+      // Preferred native scheme for direct App Store app launch (works best in external Safari)
+      const schemeUrl = 'itms-apps://apps.apple.com/us/app/restitch/id6749212071';
+      const fallbackUrl = 'https://apps.apple.com/us/app/restitch/id6749212071';
+
+      // Attempt native scheme first
+      window.location.replace(schemeUrl);
+
+      // If scheme fails or is blocked (rare in external browser), fallback after short delay
+      setTimeout(function() {
+        window.location.replace(fallbackUrl);
+      }, 800);  // 0.8 seconds – enough time for scheme to trigger if possible
+
+      // Extra push: Create hidden iframe to invoke scheme (helps in some iOS edge cases)
+      setTimeout(function() {
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = schemeUrl;
+        document.body.appendChild(iframe);
+        setTimeout(function() {
+          document.body.removeChild(iframe);
+        }, 2000);
+      }, 300);
+    })();
+  </script>
 </body>
 </html>
