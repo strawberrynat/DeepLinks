@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download ReStitch</title>
+  <meta http-equiv="refresh" content="0;url=https://apps.apple.com/us/app/restitch/id6749212071">
+</head>
+<body>
+  <h1>Redirecting to ReStitch on the App Store...</h1>
+  <p>If nothing happens, <a href="https://apps.apple.com/us/app/restitch/id6749212071">tap here</a> or try opening in Safari.</p>
+
+  <script>
+    (function() {
+      const appStoreScheme = 'itms-apps://apps.apple.com/us/app/restitch/id6749212071';
+      const fallbackUrl = 'https://apps.apple.com/us/app/restitch/id6749212071';
+
+      // Detect iOS
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+      if (isIOS) {
+        // Try native App Store scheme first to bypass in-app browser
+        window.location.replace(appStoreScheme);
+        
+        // Fallback after short delay if scheme blocked
+        setTimeout(() => {
+          window.location.replace(fallbackUrl);
+        }, 800);
+      } else {
+        // For non-iOS (fallback or future Android)
+        window.location.replace(fallbackUrl);
+      }
+
+      // Extra escape attempt via hidden iframe (helps in some WebViews)
+      setTimeout(() => {
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = appStoreScheme;
+        document.body.appendChild(iframe);
+        setTimeout(() => document.body.removeChild(iframe), 1500);
+      }, 300);
+    })();
+  </script>
+</body>
+</html>
