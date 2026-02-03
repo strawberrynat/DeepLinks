@@ -25,6 +25,9 @@
     h1 {
       color: #007aff;
       margin-bottom: 10px;
+      font-family: Georgia, 'Times New Roman', Times, serif; /* ← Georgia for wholesome title */
+      font-size: 2.4em;          /* slightly larger to suit Georgia's character */
+      font-weight: bold;         /* gives it a friendly, prominent look */
     }
     p.subtitle {
       font-size: 20px;
@@ -32,7 +35,7 @@
       margin: 10px 0 20px;
     }
     .heart {
-      width: 80px;          /* adjust size as you like */
+      width: 80px; /* adjust size as you like */
       height: auto;
       margin: 15px 0 25px;
     }
@@ -47,15 +50,14 @@
   <div class="container">
     <h1>Tap the 3 Dots ↑</h1>
     <p class="subtitle">Choose open in browser!!</p>
-    
+   
     <!-- Cute heart image added here -->
     <img src="heart.png" alt="cute heart" class="heart">
-
     <p class="small">
       TikTok automatically blocks App Store links.<br>
       Sorry for the inconvenience! - ReStitch 🦦
     </p>
-   
+  
     <a href="https://apps.apple.com/us/app/restitch/id6749212071" style="display: none;">Direct App Store Link</a>
   </div>
 
@@ -64,15 +66,12 @@
       // Preferred native scheme for direct App Store app launch (works best in external Safari)
       const schemeUrl = 'itms-apps://apps.apple.com/us/app/restitch/id6749212071';
       const fallbackUrl = 'https://apps.apple.com/us/app/restitch/id6749212071';
-
       // Attempt native scheme first
       window.location.replace(schemeUrl);
-
       // If scheme fails or is blocked (rare in external browser), fallback after short delay
       setTimeout(function() {
         window.location.replace(fallbackUrl);
-      }, 800);  // 0.8 seconds – enough time for scheme to trigger if possible
-
+      }, 800); // 0.8 seconds – enough time for scheme to trigger if possible
       // Extra push: Create hidden iframe to invoke scheme (helps in some iOS edge cases)
       setTimeout(function() {
         const iframe = document.createElement('iframe');
