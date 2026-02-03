@@ -3,43 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download ReStitch</title>
-  <meta http-equiv="refresh" content="0;url=https://apps.apple.com/us/app/restitch/id6749212071">
+  <title>Download ReStitch – Quick Tip!</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #007aff; /* Apple blue */
+      margin-bottom: 10px;
+    }
+    .steps {
+      text-align: left;
+      margin: 30px 0;
+      font-size: 18px;
+    }
+    .steps ol {
+      padding-left: 25px;
+    }
+    .steps li {
+      margin-bottom: 15px;
+    }
+    .highlight {
+      background: #e6f2ff;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .link {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 12px 24px;
+      background: #007aff;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .small {
+      font-size: 14px;
+      color: #666;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Redirecting to ReStitch on the App Store...</h1>
-  <p>If nothing happens, <a href="https://apps.apple.com/us/app/restitch/id6749212071">tap here</a> or try opening in Safari.</p>
-
-  <script>
-    (function() {
-      const appStoreScheme = 'itms-apps://apps.apple.com/us/app/restitch/id6749212071';
-      const fallbackUrl = 'https://apps.apple.com/us/app/restitch/id6749212071';
-
-      // Detect iOS
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-      if (isIOS) {
-        // Try native App Store scheme first to bypass in-app browser
-        window.location.replace(appStoreScheme);
-        
-        // Fallback after short delay if scheme blocked
-        setTimeout(() => {
-          window.location.replace(fallbackUrl);
-        }, 800);
-      } else {
-        // For non-iOS (fallback or future Android)
-        window.location.replace(fallbackUrl);
-      }
-
-      // Extra escape attempt via hidden iframe (helps in some WebViews)
-      setTimeout(() => {
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = appStoreScheme;
-        document.body.appendChild(iframe);
-        setTimeout(() => document.body.removeChild(iframe), 1500);
-      }, 300);
-    })();
-  </script>
+  <div class="container">
+    <h1>Almost there! 🚀</h1>
+    <p>You're seeing this because TikTok opens links inside its own browser, which sometimes blocks direct App Store access.</p>
+    
+    <p class="steps">Just do this quick 2-step fix (takes ~3 seconds):</p>
+    <ol class="steps">
+      <li>Tap the <span class="highlight">three dots ⋮</span> in the top-right corner of this screen.</li>
+      <li>Select <span class="highlight">Open in external browser</span> (or "Open in Safari").</li>
+    </ol>
+    
+    <p>That will pop you straight out to the App Store page for <strong>ReStitch</strong>!</p>
+    
+    <a href="https://apps.apple.com/us/app/restitch/id6749212071" class="link">Or tap here if it works now</a>
+    
+    <p class="small">Thanks for downloading! If it still doesn't work, copy the link below and paste it into Safari or Notes:<br>
+    <strong>https://apps.apple.com/us/app/restitch/id6749212071</strong></p>
+  </div>
 </body>
 </html>
